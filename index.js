@@ -1,25 +1,32 @@
-function findMinAndRemove(array){
-  let min = array[0]
+function findMinAndRemove(arr) {
+  // set first element as default min
+  // track the index of the current min
+  let min = arr[0]
   let minIndex = 0
 
-  for (let i = 0; i < array.length; i++) {
-    if(array[i] < min) {
-      min = array[i]
+  // iterate over the array
+  for(let i = 0; i < arr.length; i++) {
+    // if the val at cur element is less than min, set min equal to cur element
+    if(arr[i] < min) {
+      min = arr[i]
       minIndex = i
     }
   }
-  array.splice(minIndex, 1)
+
+  // starting at the minIndex, destructively remove 1 element
+  arr.splice(minIndex, 1)
   return min
 }
 
-function insertionSort(array){
-  let min
-  let result = []
+function insertionSort(arr) {
+  // declare the newMin and the sorted arr variable
+  let sorted = []
 
-  while (array.length != 0) {
-    min = findMinAndRemove(array)
-    result.push(min)
+  // while there are elements to sort, call findMinAndRemove on the arr
+  while(arr.length !== 0) {
+    sorted.push(findMinAndRemove(arr))
   }
 
-  return result
+  // return the sorted arr
+  return sorted
 }
