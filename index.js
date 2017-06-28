@@ -13,7 +13,8 @@ function findMinAndRemove(arr) {
     }
   }
 
-  // starting at the minIndex, destructively remove 1 element
+  // starting at the minIndex, destructively remove 1 element and return the min
+  // (using splice will both destructively remove and return the min value)
   arr.splice(minIndex, 1)
   return min
 }
@@ -22,8 +23,9 @@ function insertionSort(arr) {
   // declare sorted arr variable, which will be returned once arr has been sorted
   let sorted = []
 
-  // while there are elements to sort, call findMinAndRemove on the arr
-  while(arr.length !== 0) {
+  // while there are elements to sort, push the return value of findMinAndRemove(arr)
+  // to sorted var
+  while(arr.length > 0) {
     sorted.push(findMinAndRemove(arr))
   }
 
