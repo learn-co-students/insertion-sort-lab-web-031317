@@ -19,7 +19,7 @@ function findMinAndRemove(arr) {
 }
 
 function insertionSort(arr) {
-  // declare the newMin and the sorted arr variable
+  // declare sorted arr variable, which will be returned once arr has been sorted
   let sorted = []
 
   // while there are elements to sort, call findMinAndRemove on the arr
